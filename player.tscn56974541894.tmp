@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://d20cg62caud68"]
+
+[ext_resource type="ArrayMesh" uid="uid://xbla8q4x2v45" path="res://Models/Characters/character-male-e.obj" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://fsm1olsd1lc5" path="res://Scripts/player_controller.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://dxp04nhsj3227" path="res://player_visual.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://c1vaqgxk1q0ex" path="res://camera.gd" id="4_hqtel"]
+[ext_resource type="Texture2D" uid="uid://bobic3yagqfvi" path="res://icon.svg" id="5_sweqy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xcayt"]
+radius = 0.161249
+height = 0.656148
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_onrkg")
+
+[node name="Character Model" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_4flbx")
+skeleton = NodePath("../..")
+script = ExtResource("3_i3pqv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.328567, 0)
+shape = SubResource("CapsuleShape3D_xcayt")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.5, 0)
+script = ExtResource("4_hqtel")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+current = true
+
+[node name="Target Reticule" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+texture_albedo = ExtResource("5_sweqy")
+cull_mask = 1048574

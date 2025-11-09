@@ -1,0 +1,22 @@
+join leo right
+if {TalkedToLeo} == false:
+	set {TalkedToLeo} = true
+	leo: Hey there, I'm Leo the Sign!
+	leo: You're using Dialogger!
+	leo: I mean Dialogic!
+leo: So what kind of coffee do you like?
+- Black
+	leo: Ah, simple and sweet.
+	leo: Well, bitter instead of sweet.
+	leo: ..you know what I mean.
+
+- Cream and Sugar
+	leo: Those are my nicknames for these\:
+	Leo flexes.\
+	Nothing happens.
+	leo: ...they're on vacation.
+
+- Flat White
+	leo: So am I!
+	leo: I mean...
+	leo: Good choice!

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://6km76ij5mmih"]
+
+[ext_resource type="ArrayMesh" uid="uid://damdchp286sph" path="res://Models/Platformer/sign.obj" id="1_oe03t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nwyno"]
+size = Vector3(0.56811523, 0.6179199, 0.15911865)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oe03t"]
+radius = 0.8
+
+[node name="Sign" type="StaticBody3D"]
+
+[node name="Sign Mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_oe03t")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30871582, 0.029693604)
+shape = SubResource("BoxShape3D_nwyno")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_oe03t")

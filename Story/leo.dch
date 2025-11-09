@@ -1,0 +1,31 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.74609375, 0.11949158, 0.28103745, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "LeoWow",
+&"description": "Bunny Boi",
+&"display_name": "Leo",
+&"mirror": false,
+&"nicknames": ["Bean"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"LeoWow": {
+"export_overrides": {
+"image": "\"res://Sprites/Coffee Buns/LeoWow.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1.0,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

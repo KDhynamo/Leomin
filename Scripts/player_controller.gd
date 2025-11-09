@@ -11,6 +11,7 @@ extends CharacterBody3D
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var target_reticule: Decal = $"Target Reticule"
 @onready var throw_marker: Marker3D = $"Character Model/ThrowMarker"
+@onready var touch_area: Area3D = $LeominTouchArea
 @onready var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 const LEOMIN = preload("res://leomin.tscn")
@@ -18,6 +19,7 @@ const LEOMIN = preload("res://leomin.tscn")
 var camera_angle: float = -180
 var controlled_leomin: Array[Leomin] = [] 
 var held_leomin: Leomin = null
+var can_move: bool = true
 
 func _physics_process(delta: float) -> void:
 	# gravity
@@ -66,8 +68,9 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_released("throw"):
 		throw_leomin(distance_to_reticule)
-
-	move_and_slide()
+	
+	if can_move:
+		move_and_slide()
 
 func throw_leomin(distance_to_reticule: float):
 	var throw_vector = held_leomin.calculate_throwing_vector(distance_to_reticule, throw_marker.position.y, character_model.rotation.y, velocity)
@@ -76,3 +79,11 @@ func throw_leomin(distance_to_reticule: float):
 	held_leomin.throw(throw_vector)
 	held_leomin.collision.disabled = false
 	held_leomin.set_physics_process(true)
+
+func _on_leomin_touch_area_area_entered(area: Area3D):
+	if area.get_parent().name == "LeoSign":
+		print("hey!")
+		if Dialogic.current_timeline != null:
+			return
+		Dialogic.start('timeline')
+		pass

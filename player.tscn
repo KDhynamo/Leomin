@@ -54,3 +54,5 @@ current = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
 texture_albedo = ExtResource("5_sweqy")
 cull_mask = 1048574
+
+[connection signal="area_entered" from="LeominTouchArea" to="." method="_on_leomin_touch_area_area_entered"]

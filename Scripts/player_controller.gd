@@ -14,7 +14,7 @@ extends CharacterBody3D
 @onready var touch_area: Area3D = $LeominTouchArea
 @onready var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-const LEOMIN = preload("res://leomin.tscn")
+const LEOMIN = preload("res://Scenes/Actors/leomin.tscn")
 
 var camera_angle: float = -180
 var controlled_leomin: Array[Leomin] = [] 

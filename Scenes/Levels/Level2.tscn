@@ -1,0 +1,82 @@
+[gd_scene load_steps=14 format=3 uid="uid://b0qbnqtruy3ag"]
+
+[ext_resource type="ArrayMesh" uid="uid://cb0to8vsmuuex" path="res://Models/Platformer/block-grass-low.obj" id="1_ipaot"]
+[ext_resource type="ArrayMesh" uid="uid://q7ax01rxxy6n" path="res://Models/Platformer/tree-pine-small.obj" id="3_ngp1c"]
+[ext_resource type="ArrayMesh" uid="uid://23t56s68p22q" path="res://Models/Platformer/tree-pine.obj" id="4_u5eb6"]
+[ext_resource type="ArrayMesh" uid="uid://cit3k74lharna" path="res://Models/Platformer/crate-item.obj" id="5_tbiw2"]
+[ext_resource type="ArrayMesh" uid="uid://chsvtagtw15p7" path="res://Models/Platformer/crate-strong.obj" id="6_ab8bd"]
+[ext_resource type="ArrayMesh" uid="uid://cbi4405cufd8k" path="res://Models/Platformer/crate.obj" id="7_w5ayf"]
+[ext_resource type="ArrayMesh" uid="uid://d4ca3d8au102x" path="res://Models/Platformer/plant.obj" id="8_ya3ly"]
+[ext_resource type="PackedScene" uid="uid://cq1fscyvm7o0b" path="res://Scenes/Actors/walkplayer.tscn" id="9_d1swa"]
+[ext_resource type="PackedScene" uid="uid://6km76ij5mmih" path="res://Scenes/Actors/npc.tscn" id="10_ok1eh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5g41i"]
+size = Vector3(60, 1, 60)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nutv8"]
+
+[sub_resource type="Sky" id="Sky_05pb0"]
+sky_material = SubResource("ProceduralSkyMaterial_nutv8")
+
+[sub_resource type="Environment" id="Environment_dl8mf"]
+background_mode = 2
+sky = SubResource("Sky_05pb0")
+ambient_light_source = 2
+ambient_light_color = Color(0.439044, 0.446096, 0.508557, 1)
+adjustment_enabled = true
+adjustment_saturation = 1.63
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.84487, 0.342197, -0.411213, 0, 0.768663, 0.639654, 0.534972, -0.540424, 0.64942, 0, 5.94593, 3.25571)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5409812, 0)
+
+[node name="Block-grass-low" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(60, 0, 0, 0, 1, 0, 0, 0, 60, 0, 0, 0)
+layers = 2
+mesh = ExtResource("1_ipaot")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_5g41i")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dl8mf")
+
+[node name="Tree-pine-small" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75479, -0.040981, 1.40075)
+mesh = ExtResource("3_ngp1c")
+
+[node name="Tree-pine" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.41564, -0.040981, -5.75801)
+mesh = ExtResource("4_u5eb6")
+
+[node name="Crate-item" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.87469, -0.0409791, 2.18254)
+mesh = ExtResource("5_tbiw2")
+skeleton = NodePath("../StaticBody3D")
+
+[node name="Crate-strong" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4959, -0.040981, -3.52163)
+mesh = ExtResource("6_ab8bd")
+skeleton = NodePath("../StaticBody3D")
+
+[node name="Crate" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.06101, -0.040981, -10.3137)
+mesh = ExtResource("7_w5ayf")
+skeleton = NodePath("../StaticBody3D")
+
+[node name="Plant" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03145, -0.040981, -1.2214)
+mesh = ExtResource("8_ya3ly")
+skeleton = NodePath("../StaticBody3D")
+
+[node name="LeoSign" parent="." instance=ExtResource("10_ok1eh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2746408, 0, -5.7852497)
+
+[node name="Player" parent="." instance=ExtResource("9_d1swa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)

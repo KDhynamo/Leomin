@@ -1,0 +1,18 @@
+extends Sprite3D
+
+@onready var player: CharacterBody3D = $".."
+
+func _process(delta: float) -> void:
+	_move_bob(delta)
+	
+	
+func _move_bob(delta : float) -> void:
+	var move_speed = player.velocity.length()
+	if move_speed < 0.1 or not player.is_on_floor():
+		scale.y = .25
+		return
+	
+	var time = Time.get_unix_time_from_system()
+	var y_scale = .25 + (sin(time * 30) * 0.08)
+	scale.y = y_scale
+	

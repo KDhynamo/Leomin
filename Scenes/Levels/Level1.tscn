@@ -1,15 +1,15 @@
 [gd_scene load_steps=16 format=3 uid="uid://bjpafk2ggg8j"]
 
 [ext_resource type="ArrayMesh" uid="uid://cb0to8vsmuuex" path="res://Models/Platformer/block-grass-low.obj" id="1_3anf8"]
-[ext_resource type="PackedScene" uid="uid://d20cg62caud68" path="res://player.tscn" id="2_3anf8"]
+[ext_resource type="PackedScene" uid="uid://d20cg62caud68" path="res://Scenes/Actors/player.tscn" id="2_3anf8"]
 [ext_resource type="ArrayMesh" uid="uid://cit3k74lharna" path="res://Models/Platformer/crate-item.obj" id="2_5g41i"]
 [ext_resource type="ArrayMesh" uid="uid://chsvtagtw15p7" path="res://Models/Platformer/crate-strong.obj" id="3_7fl83"]
 [ext_resource type="ArrayMesh" uid="uid://cbi4405cufd8k" path="res://Models/Platformer/crate.obj" id="4_p5226"]
 [ext_resource type="ArrayMesh" uid="uid://d4ca3d8au102x" path="res://Models/Platformer/plant.obj" id="5_tuji2"]
 [ext_resource type="ArrayMesh" uid="uid://q7ax01rxxy6n" path="res://Models/Platformer/tree-pine-small.obj" id="8_104vp"]
 [ext_resource type="ArrayMesh" uid="uid://23t56s68p22q" path="res://Models/Platformer/tree-pine.obj" id="9_3momc"]
-[ext_resource type="PackedScene" uid="uid://uftbupl7m72s" path="res://leomin.tscn" id="10_7fl83"]
-[ext_resource type="PackedScene" uid="uid://6km76ij5mmih" path="res://Levels/sign.tscn" id="10_p5226"]
+[ext_resource type="PackedScene" uid="uid://uftbupl7m72s" path="res://Scenes/Actors/leomin.tscn" id="10_7fl83"]
+[ext_resource type="PackedScene" uid="uid://6km76ij5mmih" path="res://Scenes/Actors/npc.tscn" id="10_p5226"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5g41i"]
 vertices = PackedVector3Array(21.0363, 0.380458, 29.2863, 29.2863, 0.380458, 29.2863, 29.2863, 0.380458, 21.0363, -29.4637, 0.380458, 20.5363, -29.4637, 0.380458, 29.2863, -20.9637, 0.380458, 29.2863, 29.2863, 0.380458, -20.9637, 29.2863, 0.380458, -29.4637, 20.5363, 0.380458, -29.4637, -20.4637, 0.380458, -29.4637, -29.4637, 0.380458, -29.4637, -29.4637, 0.380458, -20.4637, -31.7137, 0.130458, 15.7863, -15.4637, 0.130458, 31.7863, 15.5363, 0.130458, 31.7863, 15.7863, 0.130458, -31.7137, 31.7863, 0.130458, 15.5363, 31.7863, 0.130458, -15.4637, -15.7137, 0.130458, -31.7137, -31.7137, 0.130458, -15.7137)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://uftbupl7m72s"]
 
-[ext_resource type="Script" uid="uid://deep75v0uytn8" path="res://leomin.gd" id="1_mq27r"]
+[ext_resource type="Script" uid="uid://deep75v0uytn8" path="res://Scripts/leomin.gd" id="1_mq27r"]
 [ext_resource type="ArrayMesh" uid="uid://bgmdb7l6b0xrd" path="res://Models/Platformer/bomb.obj" id="1_uvjb6"]
 [ext_resource type="ArrayMesh" uid="uid://bmenlbqr8ylgh" path="res://Models/Platformer/heart.obj" id="2_h5abq"]
-[ext_resource type="Script" uid="uid://bpuw0k2fit8g7" path="res://leomin_visual.gd" id="2_mq27r"]
+[ext_resource type="Script" uid="uid://bpuw0k2fit8g7" path="res://Scripts/leomin_visual.gd" id="2_mq27r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mq27r"]
 radius = 0.1

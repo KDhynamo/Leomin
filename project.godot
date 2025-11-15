@@ -81,6 +81,10 @@ window/stretch/scale=2.0
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
+[global_group]
+
+Interactables="Holds all objects the player can interact with"
+
 [input]
 
 jump={
